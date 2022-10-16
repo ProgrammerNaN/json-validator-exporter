@@ -1,0 +1,27 @@
+modules:
+  default:
+    metrics:
+    - name: example
+      path: "{ [*] }"
+      help: Example metric
+      labels:
+        environment: static
+        location: "planet-{.location}"
+      restrictions:
+        not_null:
+          - response
+          - "{.name}"
+    - name: example_second
+      path: "{ [*] }"
+      help: Example metric second
+      labels:
+        environment: static
+        location: "planet-{.location}"
+      restrictions:
+        not_null:
+          - response
+          - "{.name}"
+  not_default:
+    metrics:
+      - name: not_default example
+      
