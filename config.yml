@@ -11,6 +11,16 @@ modules:
         not_null:
           - response
           - "{.name}"
+    - name: example_second
+      path: "{ [*] }"
+      help: Example metric second
+      labels:
+        environment: static
+        location: "planet-{.location}"
+      restrictions:
+        - not_empty_response
+        - not_null:
+          - "{.name}"
   not_default:
     metrics:
       - name: not_default example
